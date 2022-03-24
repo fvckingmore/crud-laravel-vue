@@ -7,12 +7,13 @@
 
 	<!-- Bootstrap CSS -->
 	<link href="{{ url('bootstrap.min.css') }}">
-	<script src="{{ url('bootstrap.min.js') }}"></script>
 
 	<title>Laravel Vue CRUD</title>
   </head>
   <body>
   	@yield('content')
 
+	<script src="{{ url('bootstrap.min.js') }}"></script>
+	<script src="{{ mix('js/app.js') }}"></script>
   </body>
 </html>
