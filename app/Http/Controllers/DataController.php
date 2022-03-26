@@ -9,7 +9,7 @@ class DataController extends Controller
 {
 	protected $rules = [
 		'name' => 'required',
-		'dni' => 'required|min:3'
+		'dni' => 'required'
 	];
 
 	public function index()
@@ -24,18 +24,23 @@ class DataController extends Controller
 
 	public function store(Request $r)
 	{
-		$val = $r->validate($rules);
-		return Data::create($val); 
+		$val = $r->validate($this->rules);
+		Data::create($val); 
+
+		return Data::all();;
 	}
 
 	public function update(Request $r)
 	{
-		$val = $r->validate($rules);
-		return Data::find($r->id)->update($val);
+		$val = $r->validate($this->rules);
+		Data::find($r->id)->update($val);
+
+		return Data::all();
 	}
 
-	public function destroy(Request $r)
+	public function delete(Request $r)
 	{
-		return Data::find($r->id)->delete();
+		Data::find($r->id)->delete();
+		return Data::all();
 	}
 }

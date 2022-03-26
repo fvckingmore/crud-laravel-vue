@@ -1,8 +1,13 @@
 import Vue from 'vue';
-import App from './components/App.vue';
+import Crud from './components/Crud.vue';
 import axios from 'axios';
 
-const app = new Vue({
+
+new Vue({
     el: '#app',
-    render: h => h(App),
+    components: {
+        'crud': Crud,
+    }
+    //render: h => h(App),
 });
+

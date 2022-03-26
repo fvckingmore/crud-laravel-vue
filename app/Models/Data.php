@@ -15,6 +15,7 @@ class Data extends Model
 	];
 
 	protected $table = 'data';
-	protected $timestamps = false;
+	protected $primaryKey = 'id';
+	public $timestamps = false;
 
 }
